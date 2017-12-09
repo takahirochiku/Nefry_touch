@@ -1,14 +1,12 @@
 #include <Nefry.h>
 #include <NefryIFTTT.h>
 String Event, SecretKey;
-int counter =0;                       //送信データのカウンタ
 
 void setup() {
   Nefry.setStoreTitle("SecretKey",0); //Nefry DataStoreのタイトルを指定
   Nefry.setStoreTitle("Event",1);     //Nefry DataStoreのタイトルを指定
   SecretKey = Nefry.getStoreStr(0);   //Nefry DataStoreからデータを取得
   Event = Nefry.getStoreStr(1);       //Nefry DataStoreからデータを取得
-// Nefry.enableSW();                   //SW有効化
   Nefry.println("Nefry Setup!!");
 
   pinMode(A2,INPUT_PULLUP);//入力モード切り替え
